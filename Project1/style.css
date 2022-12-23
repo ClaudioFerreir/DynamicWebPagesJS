@@ -1,0 +1,7 @@
+.confirmed {
+  color: green;
+}
+
+.notConfirmed {
+  color: red;
+}
