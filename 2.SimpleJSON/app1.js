@@ -35,7 +35,7 @@ function maker(data){
   data.forEach((element, index) => {
     // customização dos elementos com sombreado
     console.log(index%2);
-    const bg = index%2 === 0 ? '#ccc' : '#fff';
+    const bg = index%2 === 0 ? '#eee' : '#fff';
     // JSON.stringify(element)
     console.log(bg);
     const div = document.createElement('div');
