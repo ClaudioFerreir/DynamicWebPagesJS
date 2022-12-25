@@ -32,11 +32,17 @@ function getData(urlPath){
 
 function maker(data){
   output.innerHTML = '<h1>JSON Data</h1>'
-  data.forEach(element => {
-    console.log(element);
+  data.forEach((element, index) => {
+    // customização dos elementos com sombreado
+    console.log(index%2);
+    const bg = index%2 === 0 ? '#ccc' : '#fff';
     // JSON.stringify(element)
-    output.innerHTML += `<div>${element.name.first} ${element.name.last}</div>`;
-    output.innerHTML += `<div>${element.location.city} ${element.location.country}</div>`;
-    output.innerHTML += `<div>${element.age}</div><hr>`;
-  });
+    console.log(bg);
+    const div = document.createElement('div');
+    div.style.backgroundColor = bg;
+    div.innerHTML += `<div>${element.name.first} ${element.name.last}</div>`;
+    div.innerHTML += `<div>${element.location.city} ${element.location.country}</div>`;
+    div.innerHTML += `<div>${element.age}</div>`;
+    output.append(div);
+    });
 }
