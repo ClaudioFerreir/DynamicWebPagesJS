@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap');@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap');
 
 body {
   font-family: 'Gentium Plus', serif;
@@ -6,8 +6,13 @@ body {
 
 .box {
   padding: 10px;
-  margin: auto;
+  margin: 15px auto;
   width: 80%;
   border: 1px solid #ddd;
   border-radius: 25px;
+}
+
+.box > div {
+  padding: 10px;
+  font-size: 1.2em;
 }
