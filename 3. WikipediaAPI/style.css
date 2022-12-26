@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap');@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Potta+One&display=swap');
+
+body {
+  font-family: 'Gentium Plus', serif;
+}
+
+.box {
+  padding: 10px;
+  margin: auto;
+  width: 80%;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+}
