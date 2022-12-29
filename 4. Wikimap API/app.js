@@ -1,5 +1,5 @@
 const url = 'https://api.tomtom.com/search/2/reverseGeocode/';
-const key = ''; // uso da API da TOM TOM Developers
+const key = 'key='; // uso da API da TOM TOM Developers
 const btn = document.querySelector('.btn');
 const output =  document.querySelector('.output');
 const inputVal = document.querySelector('.val');
