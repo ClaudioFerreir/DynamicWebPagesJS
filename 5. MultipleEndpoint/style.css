@@ -13,3 +13,7 @@ h1 {
 .box:hover{
   opacity: 0.8;
 }
+
+.btn {
+  margin: 5px 5px;
+}
