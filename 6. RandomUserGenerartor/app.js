@@ -1,7 +1,9 @@
 const btn = document.querySelector('.btn');
 const h1 = document.querySelector('h1');
+h1.style.width = '80%';
 const output = document.querySelector('.output');
 const inputVal = document.querySelector('.val');
+//.https://cors-anywhere.herokuapp.com/ // opcao local para caso as requisições tenham excedido a permissao da API
 const url = 'https://randomuser.me/api/';
 inputVal.value = '10';
 inputVal.setAttribute('type', 'number');
