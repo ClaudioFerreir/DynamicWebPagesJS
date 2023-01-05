@@ -5,4 +5,5 @@ Projects part of the Course of Udemy 2022
 - Consumo de API que gera um usuario randomico;
 - O input numerico proporciona o numero de usuarios atraves de uma interpolação com a url da API;
 - Importante a criação de uma função que vai inserindo os dados no 'box' já que será uma tarefa repetitiva;
-- Fornecimento de informações detalhadas ao clicar no perfil do usuario.
+- Fornecimento de informações detalhadas ao clicar no perfil do usuario;
+- Uso da function 'window.scrollTo({top:0})' que direciona (scrolla) a pagina para o topo da página.
