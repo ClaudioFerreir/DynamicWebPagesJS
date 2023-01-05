@@ -28,13 +28,15 @@ function maker(data){
   //console.log(data);
   data.forEach( el => {
     console.log(el);
+    const loc = el.location;
     const div = eleMaker('div', output, ''); //usamos a mesma function para criar os elementos como a div pai
     div.classList.add('box');
-    const temp = `${el.name.title} ${el.name.first} ${el.name.last} <br>
-    ${el.email}`;
+    const temp = `${el.name.title} ${el.name.first} ${el.name.last} <br>${el.email}<br>Age: ${el.dob.age}`;
     const temp1 = `<img src="${el.picture.large}">`
+    const temp2 = `${loc.city} - ${loc.state} <br> ${loc.country}`;
     eleMaker('div', div, temp);
     eleMaker('div', div, temp1);
+    eleMaker('div', div, temp2);
   })
 }
 
