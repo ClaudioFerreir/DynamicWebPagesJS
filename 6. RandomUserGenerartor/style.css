@@ -9,7 +9,6 @@ h1 {
 }
 
 .box {
-  border: 1px solid #ddd;
   padding: 10px;
   display: inline-block;
   width: 25%;
@@ -18,7 +17,12 @@ h1 {
   font-family: 'Moon Dance', cursive;
 }
 
+.box:hover{
+  cursor: pointer;
+}
+
 .box > div {
+  border: 1px solid #ddd;
   overflow: hidden;
 }
 

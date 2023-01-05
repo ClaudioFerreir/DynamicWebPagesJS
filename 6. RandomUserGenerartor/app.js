@@ -31,9 +31,16 @@ function maker(data){
     const loc = el.location;
     const div = eleMaker('div', output, ''); //usamos a mesma function para criar os elementos como a div pai
     div.classList.add('box');
+
     const temp = `${el.name.title} ${el.name.first} ${el.name.last} <br>${el.email}<br>Age: ${el.dob.age}`;
     const temp1 = `<img src="${el.picture.large}">`
     const temp2 = `${loc.city} - ${loc.state} <br> ${loc.country}`;
+
+    div.addEventListener('click', (e) => {
+      h1.innerHTML = temp + '<div>' + temp1 + '</div>';
+      window.scrollTo({top:0}); // assim ao clickar no objeto a tela é direcionada para o top da pagina
+    })
+
     eleMaker('div', div, temp);
     eleMaker('div', div, temp1);
     eleMaker('div', div, temp2);
