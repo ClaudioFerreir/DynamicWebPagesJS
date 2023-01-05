@@ -30,7 +30,8 @@ function maker(data){
     console.log(el);
     const div = eleMaker('div', output, ''); //usamos a mesma function para criar os elementos como a div pai
     div.classList.add('box');
-    const temp = `${el.name.title} ${el.name.first} ${el.name.last}`;
+    const temp = `${el.name.title} ${el.name.first} ${el.name.last} <br>
+    ${el.email}`;
     const temp1 = `<img src="${el.picture.large}">`
     eleMaker('div', div, temp);
     eleMaker('div', div, temp1);
