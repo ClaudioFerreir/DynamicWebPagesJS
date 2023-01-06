@@ -1,11 +1,13 @@
+
+
 const h1 = document.querySelector('h1');
 const inputVal = document.querySelector('.val');
 const btn = document.querySelector('.btn');
-const url1 = 'https://samples.openweathermap.org/';
-const url2 = 'https://cors-anywhere.herokuapp.com/';
+const url1 = 'https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={APIKEY}}';
 
-inputVal.value = 'test';
-btn.textContent = 'Click Me';
+
+//inputVal.value = 'test';
+//btn.textContent = 'Click Me';
 
 btn.addEventListener('click', (e) => {
   console.log('ready');
@@ -18,4 +20,9 @@ function getValues(url) {
   .then(data => {
     console.log(data)
   })
+  .catch( (err) => {
+    console.log(err);
+  })
+
+
 }

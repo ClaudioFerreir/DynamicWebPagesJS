@@ -9,4 +9,4 @@ Projects part of the Course of Udemy 2022
 - Uso da function 'window.scrollTo({top:0})' que direciona (scrolla) a pagina para o topo da página.
 
 ## Projeto 7 - Weather App
-- Uso do 'https://cors-anywhere.herokuapp.com/' para driblar a politica que nao permite usar um localhost para consumir os dados da API
+- 
