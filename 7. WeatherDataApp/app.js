@@ -1,6 +1,5 @@
 // Variaveis e selecao de elementos
-const apikey = "";
-
+const apiKeyWeather = "";
 const apiKeyUnsplash ="";
 
 const cityInput = document.querySelector('#city-input');
@@ -17,18 +16,32 @@ const windElement = document.querySelector('#wind span');
 //container que iremos mudar a classe para aparecer na tela
 const weatherContainer = document.querySelector('#weather-data');
 
+const errorMessageContainer = document.querySelector("#error-message");
+const loader = document.querySelector("#suggestions button");
 
+const suggestionContainer = document.querySelector("#suggestions");
+const suggestionButtons = document.querySelectorAll("#suggestions button");
 
 // Funçoes
+
+//Loader
+const toggleLoader = () => {
+  loader.classList.toggle("hide");
+};
+
 //funcao assincrona para obter os dados da API
 const getWeatherData = async(city) => {
-  const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apikey}&lang=pt_br`;
+  toggleLoader();
+
+  const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKeyWeather}&lang=pt_br`;
 
   const res = await fetch(apiWeatherURL);
   const data = await res.json();
 
+  toggleLoader();
+
   return data;
-}
+};
 
 //funcao assincrona para capturar imagem do unsplash
 const changeBGimage = async (city) => {
@@ -38,14 +51,33 @@ const changeBGimage = async (city) => {
   const data = await res.json();
 
   return data.urls.full;
-}
+};
 
+//Tratamento de erro
+const showErrorMessage = () => {
+  errorMessageContainer.classList.remove("hide");
+};
+
+const hideInformation = () => {
+  errorMessageContainer.classList.add("hide");
+  weatherContainer.classList.add("hide");
+
+  suggestionContainer.classList.add("hide");
+};
 
 //funcao para motrar na tela os dados extraidos
 const showWeatherData = async (city) => {
+  hideInformation();
 
   const data = await getWeatherData(city);
 
+  //Messagem de erro personalizada
+  if (data.cod === "404") {
+    showErrorMessage();
+    return;
+  }
+
+  //Dados a serem informados vindos da API
   cityElement.innerText = data.name;
   tempElement.innerText = parseInt(data.main.temp);
   descElement.innerText = data.weather[0].description;
@@ -53,14 +85,13 @@ const showWeatherData = async (city) => {
   humidityElement.innerText = `${data.main.humidity}%`;
   windElement.innerText = `${data.wind.speed}km/h`;
 
+  //Muda a imagem de fundo
   const bg = await changeBGimage(city);
   document.body.style.backgroundImage = `url("${bg}")`;
 
-  //mostra o quadro com a informação apos a pesquisa
+  //Mostra o quadro com a informação apos a pesquisa
   weatherContainer.classList.remove("hide");
 }
-
-
 
 //Eventos
 searchBtn.addEventListener("click", (e) => {
@@ -71,11 +102,20 @@ searchBtn.addEventListener("click", (e) => {
   showWeatherData(city);
 });
 
-//evento que capta a tecla 'enter' para desencadear o evento
+//Evento que capta a tecla 'enter' para desencadear o evento
 cityInput.addEventListener("keyup", (e) => {
   if (e.code === "Enter") {
     const city = e.target.value;
 
     showWeatherData(city);
   }
+});
+
+//Sugestões
+suggestionButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const city = btn.getAttribute("id");
+
+    showWeatherData(city);
+  });
 });
