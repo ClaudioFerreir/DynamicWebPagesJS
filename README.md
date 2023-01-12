@@ -15,5 +15,7 @@ Projects part of the Course of Udemy 2022
 - Imagem de fundo dinâmica;
 - Icone temporizador dinamico;
 - Estilização completa;
-- Projeto baseado no video - 
-- Repositorio - https://github.com/matheusbattisti/weather_app
+- Projeto baseado no video - https://www.youtube.com/watch?v=WZNG8UomjSI
+                           - https://www.youtube.com/watch?v=VS8EBgPwsSU
+                           - https://www.youtube.com/watch?v=QGzgE7jWDxk
+- Repositorio              - https://github.com/matheusbattisti/weather_app
