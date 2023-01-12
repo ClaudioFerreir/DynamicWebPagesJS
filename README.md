@@ -9,4 +9,11 @@ Projects part of the Course of Udemy 2022
 - Uso da function 'window.scrollTo({top:0})' que direciona (scrolla) a pagina para o topo da página.
 
 ## Projeto 7 - Weather App
-- 
+- Projetado com as APIs Open Weather e Unsplash;
+- Uso de filtro para messagem de erro;
+- Buttões com seleções pre-determinadas;
+- Imagem de fundo dinâmica;
+- Icone temporizador dinamico;
+- Estilização completa;
+- Projeto baseado no video - 
+- Repositorio - https://github.com/matheusbattisti/weather_app

@@ -35,6 +35,7 @@ body {
 
 .form-input-container {
   display: flex;
+  margin-bottom: 2rem;
 }
 
 .form input {
