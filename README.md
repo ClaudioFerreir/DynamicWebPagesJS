@@ -19,3 +19,6 @@ Projects part of the Course of Udemy 2022
                            - https://www.youtube.com/watch?v=VS8EBgPwsSU
                            - https://www.youtube.com/watch?v=QGzgE7jWDxk
 - Repositorio              - https://github.com/matheusbattisti/weather_app
+
+## Projeto 8 - Chuck Norris JOKES
+- Criação de botoes que capturam categorias na tela para retornar com um elemento da categoria determinada e exposta em butoes na pagina.
