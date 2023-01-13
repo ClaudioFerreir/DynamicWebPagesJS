@@ -53,8 +53,22 @@ function buildPage(data) {
   output.innerHTML = '';
   data.results.forEach(element => {
     const div = document.createElement('div');
-    div.textContent = element.name;
+    div.textContent = element.name || element.title;
+    div.classList.add('box');
     output.append(div);
-    console.log(element);
+    //console.log(element);
+    div.urlz = element.url; //cria uma propriedade interna atrelada ao elemento para ao clicar na div podermos acessa-lo ao chamar a function showItem.
+
+    div.addEventListener('click', showItem);
   });
+}
+
+function showItem(e) {
+  const el = e.target;
+  console.log(el.urlz);
+  fetch(el.urlz)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
 }

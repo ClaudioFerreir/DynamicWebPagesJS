@@ -29,3 +29,4 @@ Projects part of the Course of Udemy 2022
 - Botões dinamicos e interativos com o conteudo que está na API
 - Criamos uma propriedade para o elemento para poder ser acessada depois (metadados)
 - Funçao que captura as informações internas ao objeto que desencadeou o processo e acessamos uma propriedade que criamos
+- Realizamos pedidos encadeados de dados de uma API (perfeito quando precisamos acessar dados dentro de outros dados)
