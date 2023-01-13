@@ -24,6 +24,8 @@ Projects part of the Course of Udemy 2022
 - Criação de botoes que capturam categorias na tela para retornar com um elemento da categoria determinada e exposta em butoes na pagina.
 
 ## Projeto 9 - Star Wars API
+- Importante no acesso de metadados
 - Criação de botões com conteudo vindo da chave do resultado da API (uso do 'for' 'in') para capturar texto da chave
 - Botões dinamicos e interativos com o conteudo que está na API
-- Funçao que captura as informações internas ao objeto que desencadeou o processo
+- Criamos uma propriedade para o elemento para poder ser acessada depois (metadados)
+- Funçao que captura as informações internas ao objeto que desencadeou o processo e acessamos uma propriedade que criamos
