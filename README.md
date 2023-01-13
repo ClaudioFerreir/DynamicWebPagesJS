@@ -30,3 +30,5 @@ Projects part of the Course of Udemy 2022
 - Criamos uma propriedade para o elemento para poder ser acessada depois (metadados)
 - Funçao que captura as informações internas ao objeto que desencadeou o processo e acessamos uma propriedade que criamos
 - Realizamos pedidos encadeados de dados de uma API (perfeito quando precisamos acessar dados dentro de outros dados)
+- Como atraves do CATCH proporcionar uma saida de mensagem na tela para quando ocorrer um erro
+- Avaliar o que retorna da API e caso tenha como retorno um objeto e nao uma string converte-lo em uma string com o metodo '.stringfy' (metodo usado na funçao showItem)

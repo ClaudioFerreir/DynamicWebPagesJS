@@ -66,9 +66,21 @@ function buildPage(data) {
 function showItem(e) {
   const el = e.target;
   console.log(el.urlz);
+  output.innerHTML = '';
   fetch(el.urlz)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    //console.log(data);
+    for(const prop in data) {
+      console.log(`${prop} : ${data[prop]}`);
+      //console.log(typeof(data[prop])); //ver o tipo de objetos retornados e como neste casos temos so strings
+      let html = (typeof(data[prop])==='string') ? data[prop] : JSON.stringify(data[prop]); // fazemos desta forma pq a informação como objeto nao vem de uma forma ordenada para ser apresentada
+      output.innerHTML += `<div>${prop} : ${html}</div>`;
+
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+    output.innerHTML = 'ERROR';
   })
 }
