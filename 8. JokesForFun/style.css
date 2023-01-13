@@ -1,1 +1,29 @@
+.btns {
+  margin: 12px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  text-transform: capitalize;
+}
 
+.btns:hover {
+  opacity: 0.8;
+}
+
+input,
+.btn {
+  font-size: 1.5em;
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 80%;
+}
+
+.output {
+  padding: 20px;
+  margin: 3rem auto;
+  width: 70%;
+  border: 1px solid #ddd;
+}

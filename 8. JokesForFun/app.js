@@ -3,7 +3,7 @@ const btn = document.querySelector('.btn');
 const h1 = document.querySelector('h1');
 const output = document.querySelector('.output');
 const inputVal = document.querySelector('.val');
-btn.textContent = 'Click Me';
+btn.textContent = 'Search';
 const url1 = 'https://api.chucknorris.io/jokes/';
 
 btn.addEventListener('click', (e) => {
@@ -27,6 +27,7 @@ function buildCats() {
     h1.innerHTML = '';
     data.forEach(cat => {
       const btnTemp = document.createElement('button');
+      btnTemp.classList.add('btns');
       btnTemp.textContent = cat;
       h1.append(btnTemp);
       btnTemp.addEventListener('click', (e) => {
