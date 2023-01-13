@@ -1,0 +1,13 @@
+.btnz {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+  font-size: 0.5em;
+  margin: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btnz:hover {
+  opacity: 0.5;
+}

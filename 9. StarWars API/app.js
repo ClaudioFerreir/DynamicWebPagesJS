@@ -16,12 +16,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
     //limpa um elemento (h1) quando chegar a requisiçao da API
     h1.innerHTML = '';
     console.log(data);
-    //usamos for para decompor o resultado que vem da API removendo simbolos e deixando pronto para apresentarmos na tela
+    //importante usar esta proposta do for quando queremos usar a chave como texto removendo o simbolo associada ao valor
     for(const prop in data) {
       console.log(`${prop} : ${data[prop]}`)
       const btn = document.createElement('button');
+      btn.classList.add('btnz');
       btn.textContent = `${prop}`;
       h1.append(btn);
+      
     }
   })
 })
