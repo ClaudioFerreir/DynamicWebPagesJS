@@ -22,3 +22,8 @@ Projects part of the Course of Udemy 2022
 
 ## Projeto 8 - Chuck Norris JOKES
 - Criação de botoes que capturam categorias na tela para retornar com um elemento da categoria determinada e exposta em butoes na pagina.
+
+## Projeto 9 - Star Wars API
+- Criação de botões com conteudo vindo da chave do resultado da API (uso do 'for' 'in') para capturar texto da chave
+- Botões dinamicos e interativos com o conteudo que está na API
+- Funçao que captura as informações internas ao objeto que desencadeou o processo

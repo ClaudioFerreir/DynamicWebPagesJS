@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
       btn.classList.add('btnz');
       btn.textContent = `${prop}`;
       h1.append(btn);
-      
+      btn.addEventListener('click', getData);
     }
   })
 })
@@ -31,3 +31,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
 btn1.addEventListener('click', (e) => {
   console.log('ready');
 })
+
+// funcoes
+
+function getData(e) {
+  console.log(e.target);
+}
