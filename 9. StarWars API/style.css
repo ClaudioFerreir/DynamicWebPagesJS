@@ -8,6 +8,10 @@
   cursor: pointer;
 }
 
+.output {
+  margin: 30px auto;
+}
+
 .btnz:hover {
   opacity: 0.5;
 }

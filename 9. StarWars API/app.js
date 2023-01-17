@@ -44,6 +44,7 @@ function getJSON(url) {
   fetch(url)
   .then(response => response.json())
   .then((data) => {
+    console.log(data);
     buildPage(data);
   })
 }
@@ -61,6 +62,32 @@ function buildPage(data) {
 
     div.addEventListener('click', showItem);
   });
+  const pages = document.createElement('div');
+  output.append(pages);
+
+  //adicionar acesso a novas paginas no app
+  if(data.previous){
+    //pode repetir o btn2 nestes casos pq estao protegidos dentro de um mesmo escopo
+    const btn2 = document.createElement('button');
+    btn2.textContent = 'Previous';
+    pages.append(btn2);
+    btn2.urlz = data.previous; //vai pegar o valor de data.previous
+    btn2.addEventListener('click', (e) => {
+      console.log(data.previous);
+      getJSON(data.previous);
+    });
+  }
+  //adicionar acesso a novas paginas no app
+  if(data.next){
+    const btn2 = document.createElement('button');
+    btn2.textContent = 'Next';
+    pages.append(btn2);
+    btn2.urlz = data.next; //vai pegar o valor de data.next
+    btn2.addEventListener('click', (e) => {
+      console.log(data.next);
+      getJSON(data.next);
+    });
+  }
 }
 
 function showItem(e) {
