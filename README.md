@@ -32,3 +32,4 @@ Projects part of the Course of Udemy 2022
 - Realizamos pedidos encadeados de dados de uma API (perfeito quando precisamos acessar dados dentro de outros dados)
 - Como atraves do CATCH proporcionar uma saida de mensagem na tela para quando ocorrer um erro
 - Avaliar o que retorna da API e caso tenha como retorno um objeto e nao uma string converte-lo em uma string com o metodo '.stringfy' (metodo usado na funçao showItem)
+- Como adicionar um botão de next e previous pages dinamicos de acordo com a API que possui o link para as paginas com o restante dos resultados
