@@ -3,8 +3,11 @@ const btn1 = document.querySelector('.btn1');
 const h1 = document.querySelector('h1');
 const output = document.querySelector('.output');
 const inputVal = document.querySelector('.val');
+inputVal.style.display = 'none';
+btn1.style.display = 'none';
 const mainURL = 'http://swapi.dev/api/';
 let endPoint = '';
+let endTitle = '';
 
 btn1.textContent = 'Click Me';
 
@@ -37,6 +40,10 @@ btn1.addEventListener('click', (e) => {
 // funcoes
 function getData(e) {
   //console.log(e.target);
+  //console.log(e.target.innerHTML);
+  endTitle = e.target.innerHTML //captura do titulo de secao da API
+  console.log(endTitle);
+
   const el = e.target;
   getJSON(el.urlz); //acessamos uma propriedade que criamos acima
 }
@@ -52,8 +59,8 @@ function getJSON(url) {
 }
 
 function buildPage(data) {
-  //console.log(data);
-  output.innerHTML = endPoint;
+  console.log(data);
+  output.innerHTML = `<h1 class="myTitle">${endTitle}</h1><small>${endPoint}</small>`;
   data.results.forEach(element => {
     const div = document.createElement('div');
     div.textContent = element.name || element.title;
@@ -76,7 +83,7 @@ function buildPage(data) {
     pages.append(btn2);
     btn2.urlz = data.previous; //vai pegar o valor de data.previous
     btn2.addEventListener('click', (e) => {
-      console.log(data.previous);
+      //console.log(data.previous);
       getJSON(data.previous);
     });
   }
@@ -89,7 +96,7 @@ function buildPage(data) {
     pages.append(btn2);
 
     let cleanURL = endPoint.split('?');
-    console.log(cleanURL);
+    //console.log(cleanURL);
     let tempURL = cleanURL[0] + '?page=' + (i+1);
     btn2.urlz = tempURL; //vai pegar o valor da url
 
@@ -98,7 +105,7 @@ function buildPage(data) {
       getJSON(tempURL);
     });
   }
-  
+
   //adicionar acesso a novas paginas no app
   if(data.next){
     const btn2 = document.createElement('button');
@@ -106,7 +113,7 @@ function buildPage(data) {
     pages.append(btn2);
     btn2.urlz = data.next; //vai pegar o valor de data.next
     btn2.addEventListener('click', (e) => {
-      console.log(data.next);
+      //console.log(data.next);
       getJSON(data.next);
     });
   }
@@ -114,17 +121,20 @@ function buildPage(data) {
 
 function showItem(e) {
   const el = e.target;
-  console.log(el.urlz);
+  //console.log(el.urlz);
   output.innerHTML = '';
   fetch(el.urlz)
   .then((response) => response.json())
   .then((data) => {
     //console.log(data);
     for(const prop in data) {
-      console.log(`${prop} : ${data[prop]}`);
+      //console.log(`${prop} : ${data[prop]}`);
       //console.log(typeof(data[prop])); //ver o tipo de objetos retornados e como neste casos temos so strings
       let html = (typeof(data[prop])==='string') ? data[prop] : JSON.stringify(data[prop]); // fazemos desta forma pq a informação como objeto nao vem de uma forma ordenada para ser apresentada
-      output.innerHTML += `<div>${prop} : ${html}</div>`;
+
+      let propTemp = prop.replace('_',' ');//tratamento do dado do json para remover o underscore da frase
+
+      output.innerHTML += `<div><span class='bigText'>${propTemp}</span> : ${html}</div>`;
 
     }
   })

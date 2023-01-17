@@ -12,12 +12,27 @@
   cursor: pointer;
 }
 
-.output {
-  margin: 30px auto;
+.bigText {
+  font-size: 1.2em;
+  padding: 5px;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
 .btnz:hover {
   opacity: 0.5;
+}
+
+.output {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.myTitle {
+  text-transform: capitalize;
+  font-size: 3em;
+  text-align: center;
+
 }
 
 .box {
@@ -43,7 +58,8 @@
 }
 
 .pages button {
-  font-size: 1em;
+  font-size: 1.2em;
   margin: 5px;
   padding: 3px;
+  border-radius: 20px;
 }

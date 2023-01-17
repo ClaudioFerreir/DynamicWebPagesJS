@@ -34,3 +34,4 @@ Projects part of the Course of Udemy 2022
 - Avaliar o que retorna da API e caso tenha como retorno um objeto e nao uma string converte-lo em uma string com o metodo '.stringfy' (metodo usado na funçao showItem)
 - Como adicionar um botão de next e previous pages dinamicos de acordo com a API que possui o link para as paginas com o restante dos resultados
 - Adicionar botões com o numero de paginas para referenciar a pagina de forma dinamica atraves da query
+- Tratamento do que vem como json com o metodo replace removendo o '_' por ' ' atraves do metodo replace
