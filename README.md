@@ -33,3 +33,4 @@ Projects part of the Course of Udemy 2022
 - Como atraves do CATCH proporcionar uma saida de mensagem na tela para quando ocorrer um erro
 - Avaliar o que retorna da API e caso tenha como retorno um objeto e nao uma string converte-lo em uma string com o metodo '.stringfy' (metodo usado na funçao showItem)
 - Como adicionar um botão de next e previous pages dinamicos de acordo com a API que possui o link para as paginas com o restante dos resultados
+- Adicionar botões com o numero de paginas para referenciar a pagina de forma dinamica atraves da query

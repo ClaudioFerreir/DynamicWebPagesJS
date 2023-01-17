@@ -4,6 +4,7 @@ const h1 = document.querySelector('h1');
 const output = document.querySelector('.output');
 const inputVal = document.querySelector('.val');
 const mainURL = 'http://swapi.dev/api/';
+let endPoint = '';
 
 btn1.textContent = 'Click Me';
 
@@ -41,17 +42,18 @@ function getData(e) {
 }
 
 function getJSON(url) {
+  endPoint = url; //pegar o endPoint para situar a pagina atual com a query page
   fetch(url)
   .then(response => response.json())
   .then((data) => {
-    console.log(data);
+    //console.log(data);
     buildPage(data);
   })
 }
 
 function buildPage(data) {
-  console.log(data);
-  output.innerHTML = '';
+  //console.log(data);
+  output.innerHTML = endPoint;
   data.results.forEach(element => {
     const div = document.createElement('div');
     div.textContent = element.name || element.title;
@@ -63,6 +65,7 @@ function buildPage(data) {
     div.addEventListener('click', showItem);
   });
   const pages = document.createElement('div');
+  pages.classList.add('pages'); //customizacao do botao das paginas
   output.append(pages);
 
   //adicionar acesso a novas paginas no app
@@ -77,6 +80,25 @@ function buildPage(data) {
       getJSON(data.previous);
     });
   }
+
+  //criacao de numero das paginas ja que sabemos que cada pagina possui 10 itens e o atributo count tem o total de resultados
+  const total = Math.ceil(data.count / 10);
+  for(let i=0;i<total;i++){
+    const btn2 = document.createElement('button');
+    btn2.textContent = i+1;
+    pages.append(btn2);
+
+    let cleanURL = endPoint.split('?');
+    console.log(cleanURL);
+    let tempURL = cleanURL[0] + '?page=' + (i+1);
+    btn2.urlz = tempURL; //vai pegar o valor da url
+
+    btn2.addEventListener('click', (e) => {
+      console.log(tempURL);
+      getJSON(tempURL);
+    });
+  }
+  
   //adicionar acesso a novas paginas no app
   if(data.next){
     const btn2 = document.createElement('button');

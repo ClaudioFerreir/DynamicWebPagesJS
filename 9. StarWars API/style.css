@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .btnz {
   padding: 10px;
   border: 1px solid black;
@@ -30,4 +34,16 @@
 
 .box:hover {
   background-color: red;
+}
+
+.pages {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+.pages button {
+  font-size: 1em;
+  margin: 5px;
+  padding: 3px;
 }
