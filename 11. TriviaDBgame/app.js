@@ -15,4 +15,15 @@ btn1.addEventListener('click', (e) => {
   console.log('ready');
   let tempURL = baseURL + 'amount=' + inputVal.value;
   console.log(tempURL);
+  popPage(tempURL); // funcao para popular a pagina
 })
+
+function popPage (url) {
+  fetch(url)
+    .then (response => response.json())
+    .then (data => {
+      console.log(data.results);
+    })
+}
+
+
