@@ -49,6 +49,7 @@ function outputPage() {
       }else {
         console.log('wrong');
       }
+      nextQue(optsDiv); // funcao para mudar para a proxima questao
     })
   });
 /*   game.que.forEach(element => {
@@ -61,4 +62,9 @@ function genElement(parent, eleType, html) {
   temp.innerHTML = html;
   parent.append(temp);
   return temp;
+}
+
+function nextQue(parent) {
+  const btn2 = genElement(parent, 'button', 'Next Question');
+  btn2.addEventListener('click', outputPage);
 }
