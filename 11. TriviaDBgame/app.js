@@ -31,9 +31,21 @@ function popPage (url) {
 }
 
 function outputPage () {
-  console.log(game.que[game.question]); // pergunta e indice
-  game.question++;
+  let question = game.que[game.question]; // pergunta e indice
+  game.question++; // move to next question
+  console.log(question);
+  let answers = question.incorrect_answers;
+  answers.push(question.correct_answer);
+  console.log(answers);
+
 /*   game.que.forEach(element => {
     console.log(element);
   }); */
+}
+
+function genElement (parent, eleType, html) {
+  const temp = document.createElement(eleType);
+  temp.innerHTML = html;
+  parent.append(temp);
+  return temp;
 }
