@@ -3,6 +3,7 @@ const h1 = document.querySelector('.h1');
 const output = document.querySelector('.output');
 const inputVal = document.querySelector('.val');
 const baseURL = 'https://opentdb.com/api.php?';
+const game = {question: []};
 
 window.addEventListener('DOMContentLoaded', (e) => {
   console.log('DOM ready'); // msg sempre que o conteudo do DOM é carregado
@@ -22,8 +23,13 @@ function popPage (url) {
   fetch(url)
     .then (response => response.json())
     .then (data => {
-      console.log(data.results);
+      game.que = data.results;
+      outputPage();
     })
 }
 
-
+function outputPage (array) {
+  array.forEach(element => {
+    console.log(element);
+  });
+}
