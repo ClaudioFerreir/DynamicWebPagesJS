@@ -1,9 +1,9 @@
 const btn1 = document.querySelector('.btn');
-const h1 = document.querySelector('.h1');
+const h1 = document.querySelector('h1');
 const output = document.querySelector('.output');
 const inputVal = document.querySelector('.val');
 const baseURL = 'https://opentdb.com/api.php?';
-const game = {question: []}; // objeto para armazenar as questoes
+const game = {que: [], question:0}; // objeto para armazenar as questoes
 
 window.addEventListener('DOMContentLoaded', (e) => {
   console.log('DOM ready'); // msg sempre que o conteudo do DOM é carregado
@@ -13,7 +13,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
 })
 
 btn1.addEventListener('click', (e) => {
-  console.log('ready');
+  btn1.style.display = 'none';
+  inputVal.style.display = 'none';
+  h1.textContent = inputVal.value + ' questions(s) selected';
   let tempURL = baseURL + 'amount=' + inputVal.value;
   console.log(tempURL);
   popPage(tempURL); // funcao para popular a pagina
@@ -29,7 +31,8 @@ function popPage (url) {
 }
 
 function outputPage () {
-  console.log(game.que);
+  console.log(game.que[game.question]); // pergunta e indice
+  game.question++;
 /*   game.que.forEach(element => {
     console.log(element);
   }); */

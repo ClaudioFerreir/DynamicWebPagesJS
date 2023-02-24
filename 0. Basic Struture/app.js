@@ -1,5 +1,5 @@
 const btn1 = document.querySelector('.btn');
-const h1 = document.querySelector('.h1');
+const h1 = document.querySelector('h1');
 const output = document.querySelector('.output');
 const inputVal = document.querySelector('.val');
 
